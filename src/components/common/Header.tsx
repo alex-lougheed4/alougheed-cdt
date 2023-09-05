@@ -4,7 +4,11 @@ import PhoneIcon from "@mui/icons-material/Phone";
 
 export default function page() {
   return (
-    <Stack direction="row" alignItems="center" spacing={50}>
+    <Stack
+      direction="row"
+      alignItems="center"
+      spacing={{ xs: 1, sm: 2, md: 4 }}
+    >
       <Box paddingLeft={1} sx={{ display: "flex" }} alignItems="center">
         <object type="image/svg+xml" aria-label="logo" data={LogoIcon}></object>
         <Box marginLeft={2}>
@@ -12,7 +16,7 @@ export default function page() {
           <Typography variant="body1">Dip CDT RCSEd</Typography>
         </Box>
       </Box>
-      <Box sx={{ display: "flex" }}>
+      <Box paddingLeft={50} sx={{ display: "flex" }}>
         <PhoneIcon fontSize="large" />
         <Box>
           <Typography variant="body1">07969503244</Typography>

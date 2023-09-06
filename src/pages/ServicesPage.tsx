@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
 
 export default function page() {
- return<Typography>Denture Page</Typography>
+  return <Typography variant="h4">What is a CDT?</Typography>;
 }

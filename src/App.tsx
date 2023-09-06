@@ -2,8 +2,9 @@ import "./App.css";
 import { ThemeProvider } from "@emotion/react";
 import Header from "./components/common/Header";
 import { CssBaseline, createTheme } from "@mui/material";
-import HomePage from "./components/home/page";
 import NavBar from "./components/common/NavBar";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
 
 function App() {
   const theme = createTheme({
@@ -16,8 +17,8 @@ function App() {
         main: "#f50057",
       },
       background: {
-        default: "#00c5ff",
-        paper: "#03a9f4",
+        default: "#3383FF",
+        paper: "#3f51b5",
       },
       text: {
         primary: "rgba(255,255,255,0.87)",
@@ -30,7 +31,7 @@ function App() {
       <CssBaseline />
       <Header />
       <NavBar />
-      <HomePage />
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }

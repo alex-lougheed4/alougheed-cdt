@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 
-const pages = ["Home", "About", "Dentures", "Contact"];
+const pages = ["About", "Services", "Contact"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -29,19 +29,17 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            noWrap
+          <Button
             component="a"
             href="/"
             sx={{
-              mr: 2,
               display: { xs: "none", md: "flex" },
               color: "inherit",
               textDecoration: "none",
             }}
           >
             Home
-          </Typography>
+          </Button>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -84,7 +82,12 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  display: { xs: "none", md: "flex" },
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+                href={`/${page}`}
               >
                 {page}
               </Button>

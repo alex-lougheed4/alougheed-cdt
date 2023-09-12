@@ -9,6 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "@mui/material";
+import { menuItems } from "./NavBarInputData";
 
 const pages = ["About", "Services", "Contact"];
 
@@ -25,8 +27,20 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+  const [anchorEl, setAnchorEl] = React.useState<null | {
+    [x: number]: HTMLElement;
+  }>(null);
+
+  const handleClick = (index, event) => {
+    setAnchorEl({ [index]: event.currentTarget });
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ marginBottom: 1 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Button
@@ -40,7 +54,7 @@ function ResponsiveAppBar() {
           >
             Home
           </Button>
-
+          {/*small display*/}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -71,27 +85,59 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  component={Link}
+                  href={`/${page}`}
+                >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
+          {/*standard display*/}
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "none", md: "flex" },
-                  color: "inherit",
-                  textDecoration: "none",
-                }}
-                href={`/${page}`}
-              >
-                {page}
-              </Button>
+            {Object.keys(menuItems).map((item, index) => (
+              <>
+                <Button color="inherit" onClick={(e) => handleClick(index, e)}>
+                  {item}
+                </Button>
+                <Menu
+                  anchorEl={anchorEl && anchorEl[index]}
+                  keepMounted
+                  open={Boolean(anchorEl) && Boolean(anchorEl![index])}
+                  onClose={handleClose}
+                  /* getContentAnchorEl={null} */
+                  anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+                  transformOrigin={{ vertical: "top", horizontal: "center" }}
+                >
+                  {menuItems[item].map((menuitems, menuindex) => (
+                    <MenuItem
+                      key={menuindex}
+                      selected={menuitems === item}
+                      onClick={handleClose}
+                      component={Link}
+                      href={menuitems.path}
+                    >
+                      {menuitems.title}
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </>
             ))}
+            <Button
+              component="a"
+              href="/contact"
+              sx={{
+                display: { xs: "none", md: "flex" },
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Contact
+            </Button>
           </Box>
         </Toolbar>
       </Container>
@@ -99,3 +145,12 @@ function ResponsiveAppBar() {
   );
 }
 export default ResponsiveAppBar;
+
+//<Button id="menuButton" onClick={handleClick}>
+//          <MenuIcon />
+//        </Button>
+//        <Menu id="menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
+//          <MenuItem onClick={handleClose}>Home</MenuItem>
+//          <MenuItem onClick={handleClose}>About</MenuItem>
+//          <MenuItem onClick={handleClose}>Contact</MenuItem>
+//        </Menu>

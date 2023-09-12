@@ -8,6 +8,8 @@ export default function Header() {
       direction="row"
       alignItems="center"
       spacing={{ xs: 1, sm: 2, md: 4 }}
+      mb={1}
+      mt={1}
     >
       <Box
         flexGrow={2}

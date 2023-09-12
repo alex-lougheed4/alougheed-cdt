@@ -1,4 +1,4 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 import ImageCarousel from "../components/ImageCarousel";
 
 export default function page() {

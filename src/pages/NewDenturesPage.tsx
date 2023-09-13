@@ -40,8 +40,15 @@ export default function page() {
           </Grid>
           <Grid item xs={4}>
             <DentureCard
-              name="Chrome"
+              name="Chrome - Full"
               image={chromeFullOne}
+              description="This is a Chrome Denture"
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <DentureCard
+              name="Chrome - Partial"
+              image={chromePartial}
               description="This is a Chrome Denture"
             />
           </Grid>

@@ -10,9 +10,9 @@ export default function page() {
           <img alt="Andrew Lougheed" src={image}></img>
 
           <Typography variant="body1">
-            Andrew is a qualified CDT with over 30 of denture experience running
-            his own dental lab, producing high quality dentures putting patient
-            care and comfort first.
+            Andrew is a qualified CDT with over 30 years of denture experience
+            running his own dental lab, producing high quality dentures putting
+            patient care and comfort first.
           </Typography>
         </Stack>
       </Paper>

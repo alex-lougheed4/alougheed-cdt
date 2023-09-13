@@ -3,19 +3,11 @@ import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
 import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-//import {
-//  chromeFullOne,
-//  chromeFullTwo,
-//  chromePartial,
-//  implantFullOne,
-//  implantFullTwo,
-//} from "../assets/index";
 import chromeFullOne from "../assets/CarouselImages/chromeFull1.png";
 import chromeFullTwo from "../assets/CarouselImages/chromeFull2.png";
 import chromePartial from "../assets/CarouselImages/chromePartial.png";
@@ -75,12 +67,7 @@ function SwipeableTextMobileStepper() {
           height: 50,
           pl: 2,
         }}
-      >
-        {/* <Typography sx={{ textAlign: "center" }}>
-          {images[activeStep].label}
-        </Typography>
-      */}
-      </Paper>
+      ></Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}

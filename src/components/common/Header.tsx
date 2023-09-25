@@ -17,7 +17,12 @@ export default function Header() {
         sx={{ display: "flex" }}
         alignItems="center"
       >
-        <object type="image/svg+xml" aria-label="logo" data={LogoIcon}></object>
+        <object
+          width="200px"
+          type="image/svg+xml"
+          aria-label="logo"
+          data={LogoIcon}
+        ></object>
         <Box marginLeft={2}>
           <Typography variant="h3">Andrew Lougheed</Typography>
           <Typography variant="body1">Dip CDT RCSEd</Typography>

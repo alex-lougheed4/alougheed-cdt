@@ -10,6 +10,12 @@ export default function page() {
           for in-clinic work.
         </Typography>
       </Paper>
+      <Paper>
+        <Typography variant="body1">
+          Andrew can currently be found primarily in the West Midlands Area
+          working in clinics in locations such as: Bewdley, Malvern
+        </Typography>
+      </Paper>
     </>
   );
 }

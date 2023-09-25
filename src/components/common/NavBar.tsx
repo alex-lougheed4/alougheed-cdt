@@ -9,12 +9,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Link } from "@mui/material";
+import { Link, useTheme } from "@mui/material";
 import { menuItems } from "./NavBarInputData";
 
 const pages = ["About", "Services", "Contact"];
 
 function ResponsiveAppBar() {
+  const theme = useTheme();
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -112,6 +114,7 @@ function ResponsiveAppBar() {
                   /* getContentAnchorEl={null} */
                   anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
                   transformOrigin={{ vertical: "top", horizontal: "center" }}
+                  color={theme.palette.primary.main}
                 >
                   {menuItems[item].map((menuitems, menuindex) => (
                     <MenuItem

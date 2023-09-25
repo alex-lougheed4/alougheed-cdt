@@ -64,7 +64,7 @@ function SwipeableTextMobileStepper() {
         sx={{
           display: "flex",
           alignItems: "center",
-          height: 50,
+          height: 25,
           pl: 2,
         }}
       ></Paper>

@@ -11,17 +11,17 @@ function App() {
     palette: {
       mode: "light",
       primary: {
-        main: "#3f51b5",
+        main: "#5B85D9",
       },
       secondary: {
-        main: "#f50057",
+        main: "#F0E6CD",
       },
       background: {
-        default: "#3383FF",
-        paper: "#3f51b5",
+        default: "#F0E6CD",
+        paper: "#5B85D9",
       },
       text: {
-        primary: "rgba(255,255,255,0.87)",
+        primary: "rgba(0,0,0,0.87)",
       },
     },
   });

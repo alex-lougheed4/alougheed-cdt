@@ -8,13 +8,13 @@ export type DentureCardProps = {
 
 export const DentureCard = ({ image, name, description }: DentureCardProps) => (
   <Paper
-    sx={{ backgroundColor: "#295396" }}
+    sx={{ backgroundColor: "#c1d8f0" }}
     component={Box}
     display="flex"
     flexDirection="column"
     alignItems="center"
     square
-    elevation={3}
+    elevation={5}
   >
     <Typography align="center" variant="h6">
       {name}
@@ -31,6 +31,8 @@ export const DentureCard = ({ image, name, description }: DentureCardProps) => (
       src={image}
       alt={name}
     />
-    <Typography variant="body1">{description}</Typography>
+    <Typography textAlign="center" variant="body1">
+      {description}
+    </Typography>
   </Paper>
 );

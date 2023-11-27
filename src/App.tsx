@@ -9,7 +9,6 @@ import { router } from "./router";
 function App() {
   const theme = createTheme({
     palette: {
-      mode: "light",
       primary: {
         main: "#5B85D9",
       },
